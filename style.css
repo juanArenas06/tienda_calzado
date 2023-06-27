@@ -1,0 +1,275 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+ width: 100%;
+ height: 100%;
+background-color:#f2f2f2;
+overflow-x: hidden;
+
+}
+
+/* Estilos generales del menú */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 30px;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  position: relative;
+  margin-left: 1rem;
+}
+
+nav li a {
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: white;
+}
+
+nav li:hover > ul {
+  visibility: visible;
+  opacity: 1;
+}
+
+nav ul ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+
+nav ul ul li {
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+nav ul ul li:last-child {
+  border-bottom: none;
+}
+
+nav ul ul a {
+  padding: 0.5rem;
+  color: #333;
+}
+
+/* Estilos para pantallas pequeñas */
+
+@media screen and (max-width: 768px) {
+  .logo h1 {
+    font-size: 1.2rem;
+  }
+
+  nav {
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav li {
+    margin: 0;
+  }
+
+  nav li a {
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+  }
+
+  nav li:last-child a {
+    border-bottom: none;
+  }
+
+  nav.active {
+    transform: translateX(0);
+  }
+}
+
+
+
+/* CSS */
+.banner {
+  height: 400px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+.banner-text h2 {
+  font-size: 32px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.banner-text p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.button {
+  display: inline-block;
+  background-color: #fff;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (max-width: 767px) {
+  .banner-text {
+    position: static;
+    transform: none;
+    text-align: left;
+  }
+
+  .banner-text h2 {
+    font-size: 24px;
+  }
+
+  .banner-text p {
+    font-size: 16px;
+  }
+}
+
+.titulo-animado {
+  font-weight: bold;
+  text-align: center;
+  font-size: 4rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  animation: animacion-titulo 2s ease infinite;
+}
+
+@keyframes animacion-titulo {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.carousel-container {
+  display: flex;
+  width: 100vw; /* Ancho de pantalla */
+  padding: 20px 0;
+  animation: scroll 20s linear infinite;
+  overflow: hidden;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  margin-right: 20px;
+  text-align: center;
+  position: relative;
+ padding: 20px;
+ background-color: #f2f2f2;
+}
+
+.precio-oferta {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  background-color: #ff0000;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(calc(100% + 200px)); /* Ajusta el valor 200px para evitar que el último elemento se corte */
+  }
+  100% {
+     transform: translateX(calc(-100% + 200px)); /* Ajusta el valor 200px para evitar que el último elemento se corte */
+  }
+}
+
+.carruselimg{
+  height: 200px;
+  width: 200px;
+}
+
+.precio-anterior {
+  text-decoration: line-through;
+  color: gray;
+  font-size: 1.2rem;
+}
+
+.precio-actual {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #383d38;
+}
+
+.buy-button {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #456fbc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+  background-color: #3e4f8e;
+}

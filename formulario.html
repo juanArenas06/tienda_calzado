@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="formulario.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>StrideStyle</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Inicio</a></li>
+        <li class="productos">
+          <a>Productos</a>
+          <ul>
+            <li style="background-color: black;"><a href="./productosdama.html">Dama 🙍‍♀️</a></li>
+            <li style="background-color: black;"><a href="./productoscaballero.html">Caballero 👲</a></li>
+          </ul>
+        </li>
+        <li><a href="./formulario.html">Contacto</a></li>
+      </ul>
+    </nav>    
+  </header>
+
+      <h2>Vamos a contactarte </h2>
+      <h6>Por favor, rellene los datos para poder contactarnos con usted.</h6>
+      <hr>
+      
+    <form action="guardar.php" method="POST" >
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+      
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required>
+      
+        <label for="genero">Género:</label>
+        <select id="genero" name="genero" required>
+          <option value="">Selecciona...</option>
+          <option value="hombre">Hombre</option>
+          <option value="mujer">Mujer</option>
+          <option value="otro">Otro</option>
+        </select>
+      
+        <label for="contacto">Número de contacto:</label>
+        <input type="tel" id="contacto" name="contacto" required>
+      
+        <label for="referencia">Número de referencia del producto:</label>
+        <input type="text" id="referencia" name="referencia" required>
+      
+        <label for="talla">Talla:</label>
+        <input type="text" id="talla" name="talla" required>
+      
+        <label for="solicitud">Solicitud:</label>
+        <textarea id="solicitud" name="solicitud" required></textarea>
+      
+        <button type="submit">Enviar</button>
+      </form>
+     
+      
+</body>
+</html>
